@@ -1,9 +1,4 @@
- ______                ____      _ __
-  /_  __/___  ____ ___  /  _/___  (_) /_
-   / / / __ \/ __ `__ \ / // __ \/ / __/
-  / / / /_/ / / / / / // // / / / / /_
- /_/ / .___/_/ /_/ /_/___/_/ /_/_/\__/
-    /_/
+
                UAC Suicide Squad v1.1
                       By Cn33liz 2016
 A tool to Bypass User Account Control (UAC), to get a High Integrity (or SYSTEM) Reversed Command shell, a reversed PowerShell session, or a Reversed Meterpreter session. When TpmInit.exe starts, it first tries to load the wbemcomn.dll within C:\Windows\System32\wbem. This DLL cannot be found in that folder, so it tries to load the DLL again, but then in C:\Windows\System32. This tool exploits this DLL loading vulnerability within TpmInit.exe, which runs auto-elevated by default. Same issue also applies to the WMI Performance Adapter service (wmiApSrv) which runs with SYSTEM privileges. So while we can use TpmInit.exe to get Elevated priviliges, we can also use it to start the wmiApSrv service, and get a SYSTEM shell using our custom DLL :)
